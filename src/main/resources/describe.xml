@@ -1,0 +1,37 @@
+<AdapterKind  key="DOCKER" nameKey="1" version="2"
+
+xmlns="http://schemas.vmware.com/vcops/schema"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+
+
+<ResourceKinds>
+	<ResourceKind key="Container" nameKey="100" showTag="true">
+	            <ResourceIdentifier dispOrder="1" key="ContainerName" length="100" nameKey="7" required="true" type="string" identType="2" />
+	            <ResourceIdentifier dispOrder="2" key="ImageID" length="100" nameKey="9" required="true" type="string" />
+	            
+	            <ResourceGroup instanced="false" key="cpu" nameKey="12" validation="">
+	            	<ResourceAttribute key="total_usage" nameKey="13" dashboardOrder="1" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false" maxVal="" minVal=""  unit="kb"/>
+	            </ResourceGroup>
+	            
+	            <ResourceGroup instanced="false" key="mem" nameKey="42" validation="">
+	            	<ResourceAttribute key="max_usage" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false" maxVal="" minVal=""  unit="kb"/>
+	            </ResourceGroup>
+	            
+	            <ResourceGroup instanced="false" key="net" nameKey="56" validation="">
+	            	<ResourceAttribute key="packetsRxPerSec" nameKey="1509" dashboardOrder="6" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false" maxVal="" minVal="" />
+	            </ResourceGroup>
+	            
+	 </ResourceKind>
+	 
+	 <ResourceKind key="HostSystem" nameKey="101" showTag="false">
+            <ResourceIdentifier dispOrder="1" key="HostIP" length="100" nameKey="7" required="true" type="string" identType="2" />
+     </ResourceKind>
+</ResourceKinds>
+
+<TraversalSpecKinds>
+        <TraversalSpecKind name="vDocker" nameKey="10001" filterType="GENERIC_RELATION" rootAdapterKind="DOCKER" rootResourceKind="HostSystem" iconName="1.png">
+            <ResourcePath path="DOCKER::HostSystem||DOCKER::Container::child"/>
+        </TraversalSpecKind>    
+    </TraversalSpecKinds>
+</AdapterKind>
