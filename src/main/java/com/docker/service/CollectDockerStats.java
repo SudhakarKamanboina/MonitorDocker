@@ -22,7 +22,8 @@ public class CollectDockerStats {
 		ExecutorService executor = Executors.newFixedThreadPool(5);
 		logger.error("testing");
 		
-		URL docker = new URL("http://192.168.59.103:2375/v1.18/containers/nodejs/stats");
+		//URL docker = new URL("http://192.168.59.103:2375/v1.18/containers/nodejs/stats");
+		URL docker = new URL("http://10.20.132.56:4243/v1.18/containers/mysql_vm2/stats");
         URLConnection yc = docker.openConnection();
         BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
         String inputLine;
