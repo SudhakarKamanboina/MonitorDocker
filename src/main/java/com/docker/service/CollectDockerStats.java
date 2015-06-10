@@ -31,7 +31,8 @@ public class CollectDockerStats {
         List<String> stats = new ArrayList<String>();
         while ((inputLine = in.readLine()) != null) 
         {
-            stats.add(inputLine);
+            System.out.println(inputLine);
+        	stats.add(inputLine);
         	if(delegate && stats.size() ==3)
             {
         		result = executor.submit(new ProcessStats(stats));

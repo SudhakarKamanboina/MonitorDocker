@@ -1,11 +1,14 @@
 package com.docker.service;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.TimeZone;
 import java.util.concurrent.Callable;
 
 import jodd.http.HttpRequest;
@@ -42,7 +45,25 @@ public class ProcessStats implements Callable<Boolean> {
 			httpRequest.header("X-vRealizeOps-API-use-unsupported", "true");
 			httpRequest.basicAuthentication("admin", "Login@123");
 			HttpResponse response = httpRequest.send();
-			System.out.println(response.statusCode()+" : "+response.statusPhrase());
+			System.out.println("this is for container: "+response.statusCode()+" : "+response.statusPhrase());
+			
+			StatContents sts = null;
+			List<Long> timestamps = getTimestamps();
+			StatContent st = new StatContent();
+			st.setStatKey("cpu");
+			st.setData(new double[] { 5, 5, 5 });
+			st.setTimestamps(new long[] { timestamps.get(0), timestamps.get(1), timestamps.get(2) });
+			sts = new StatContents(Arrays.asList(st));
+			String str = new JSONObject(sts).toString().replaceFirst("statContents", "stat-content");
+			System.out.println("HOST "+str);
+			
+			HttpRequest httpRequest1 = HttpRequest.post("https://10.20.133.250/suite-api//api/resources/16b3ecbe-b36c-4053-84ae-1122949fea60/stats");
+			httpRequest1.body(str);
+			httpRequest1.contentType("application/json");
+			httpRequest1.header("X-vRealizeOps-API-use-unsupported", "true");
+			httpRequest1.basicAuthentication("admin", "Login@123");
+			HttpResponse response1 = httpRequest1.send();
+			System.out.println("this is for HOST: "+response1.statusCode()+" : "+response1.statusPhrase());
 		}
 		catch(Exception e)
 		{
@@ -148,19 +169,22 @@ public class ProcessStats implements Callable<Boolean> {
 		{
 			SimpleDateFormat sdf = new SimpleDateFormat(
 					"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-
 			JSONObject result = new JSONObject(stat);
-
+			
+			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
+			Date date = new Date();
+			System.out.println(dateFormat.format(date));
+			
 			Date dt=null;
 			try {
-				dt = sdf.parse(result.getString("read"));
+				dt = new Date();//sdf.parse(result.getString("read"));
+				//System.out.println(result.getString("read") + " -- "+dt);
 			} catch (JSONException e) {
-				e.printStackTrace();
-			} catch (ParseException e) {
 				e.printStackTrace();
 			}
 			long milli = dt.getTime();
-			timestamps.add(milli);
+			//System.out.println(dt +" .. "+milli);
+			timestamps.add(date.getTime());
 		}
 		return timestamps;
 	}

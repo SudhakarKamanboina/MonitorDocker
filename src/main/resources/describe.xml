@@ -1,4 +1,4 @@
-<AdapterKind  key="DOCKER" nameKey="1" version="2"
+<AdapterKind  key="DOCKER" nameKey="1" version="4"
 
 xmlns="http://schemas.vmware.com/vcops/schema"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -26,11 +26,15 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	 
 	 <ResourceKind key="HostSystem" nameKey="101" showTag="false">
             <ResourceIdentifier dispOrder="1" key="HostIP" length="100" nameKey="7" required="true" type="string" identType="2" />
+            
+            	<ResourceGroup instanced="false" key="cpu" nameKey="42" validation="">
+	            	<ResourceAttribute key="usage" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false" maxVal="" minVal=""  unit="kb"/>
+	            </ResourceGroup>
      </ResourceKind>
 </ResourceKinds>
 
 <TraversalSpecKinds>
-        <TraversalSpecKind name="vDocker" nameKey="10001" filterType="GENERIC_RELATION" rootAdapterKind="DOCKER" rootResourceKind="HostSystem" iconName="1.png">
+        <TraversalSpecKind name="vDocker" filterType="GENERIC_RELATION" rootAdapterKind="DOCKER" rootResourceKind="HostSystem">
             <ResourcePath path="DOCKER::HostSystem||DOCKER::Container::child"/>
         </TraversalSpecKind>    
     </TraversalSpecKinds>
