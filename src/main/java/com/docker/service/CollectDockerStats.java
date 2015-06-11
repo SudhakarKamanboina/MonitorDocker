@@ -14,42 +14,54 @@ import java.util.concurrent.Future;
 import org.apache.log4j.Logger;
 
 
-public class CollectDockerStats {
+public class CollectDockerStats implements Runnable {
 	
 	final static Logger logger = Logger.getLogger(CollectDockerStats.class);
+	private String strUrl;
 	
-	public static void main(String[] args) throws Exception {
-		ExecutorService executor = Executors.newFixedThreadPool(5);
-		logger.error("testing");
+	public CollectDockerStats(String url) {
+			this.strUrl = url;
+	}
+
+	@Override
+	public void run() {
 		
-		//URL docker = new URL("http://192.168.59.103:2375/v1.18/containers/nodejs/stats");
-		URL docker = new URL("http://10.20.132.56:4243/v1.18/containers/mysql_vm2/stats");
-        URLConnection yc = docker.openConnection();
-        BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
-        String inputLine;
-        boolean delegate=true;
-        Future<Boolean> result=null;
-        List<String> stats = new ArrayList<String>();
-        while ((inputLine = in.readLine()) != null) 
-        {
-            System.out.println(inputLine);
-        	stats.add(inputLine);
-        	if(delegate && stats.size() ==3)
-            {
-        		result = executor.submit(new ProcessStats(stats));
-            }
-            if(null != result)
-            {
-            	delegate = result.isDone();
-            	if(delegate)
-            	{
-            		stats.removeAll(stats);
-            		result = null;
-            	}
-            }
-            
-        }
-        in.close();
+		ExecutorService executor = Executors.newFixedThreadPool(5);
+		try
+		{
+			logger.debug("Thread for url: "+strUrl);
+			URL docker = new URL(strUrl);
+	        URLConnection yc = docker.openConnection();
+	        BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
+	        String inputLine;
+	        boolean delegate=true;
+	        Future<Boolean> result=null;
+	        List<String> stats = new ArrayList<String>();
+	        while ((inputLine = in.readLine()) != null) 
+	        {
+	            System.out.println(strUrl +" --- "+inputLine);
+	        	stats.add(inputLine);
+	        	if(delegate && stats.size() ==3)
+	            {
+	        		result = executor.submit(new ProcessStats(stats));
+	            }
+	            if(null != result)
+	            {
+	            	delegate = result.isDone();
+	            	if(delegate)
+	            	{
+	            		stats.removeAll(stats);
+	            		result = null;
+	            	}
+	            }
+	            
+	        }
+	        in.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
         executor.shutdown();
 	}
 
