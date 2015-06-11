@@ -14,7 +14,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	            	<ResourceAttribute key="total_usage" nameKey="13" dashboardOrder="1s" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false" maxVal="" minVal=""  unit="kb"/>
 	            	<ResourceAttribute key="percpu_usage" dashboardOrder="1" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false"  unit="kb"/>
 	            	<ResourceAttribute key="usage_in_kernelmode" dashboardOrder="1" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false"  unit="kb"/>
-	            	<ResourceAttribute key="usage_in_usermode"s dashboardOrder="1" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false"  unit="kb"/>
+	            	<ResourceAttribute key="usage_in_usermode" dashboardOrder="1" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false"  unit="kb"/>
 	            </ResourceGroup>
 	            
 	            <ResourceGroup instanced="false" key="mem" nameKey="42" validation="">
@@ -29,8 +29,20 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	            	<ResourceAttribute key="pgfault" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
 	            	<ResourceAttribute key="pgmajfault" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
 	            	<ResourceAttribute key="pgpgin" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	
-	            	
+	            	<ResourceAttribute key="pgpgouts" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="rss" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="rss_huge" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_active_anon" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_cache" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_inactive_anon" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_inactive_file" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_mapped_file" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_pgfault" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_pgmajfault" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_pgpgin" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_pgpgout" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_rss" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_rss_huge" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
 	            </ResourceGroup>
 	            
 	            <ResourceGroup instanced="false" key="net" nameKey="56" validation="">
@@ -43,7 +55,6 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	 
 	 <ResourceKind key="HostSystem" nameKey="101" showTag="false">
             <ResourceIdentifier dispOrder="1" key="HostIP" length="100" nameKey="7" required="true" type="string" identType="2" />
-            
             	<ResourceGroup instanced="false" key="cpu" nameKey="42" validation="">
 	            	<ResourceAttribute key="usage" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false" maxVal="" minVal=""  unit="kb"/>
 	            </ResourceGroup>
