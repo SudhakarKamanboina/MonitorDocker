@@ -1,4 +1,4 @@
-<AdapterKind  key="DOCKER" nameKey="1" version="4"
+<AdapterKind  key="DOCKER" nameKey="1" version="5"
 
 xmlns="http://schemas.vmware.com/vcops/schema"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -12,43 +12,41 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	            
 	            <ResourceGroup instanced="false" key="cpu" nameKey="12" validation="">
 	            	<ResourceAttribute key="total_usage" nameKey="13" dashboardOrder="1s" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false" maxVal="" minVal=""  unit="kb"/>
-	            	<ResourceAttribute key="percpu_usage" dashboardOrder="1" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false"  unit="kb"/>
-	            	<ResourceAttribute key="usage_in_kernelmode" dashboardOrder="1" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false"  unit="kb"/>
-	            	<ResourceAttribute key="usage_in_usermode" dashboardOrder="1" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false"  unit="kb"/>
+	            	<ResourceAttribute key="usage_in_kernelmode" nameKey="13" dashboardOrder="1" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false"  unit="kb"/>
+	            	<ResourceAttribute key="usage_in_usermode" nameKey="13" dashboardOrder="1" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false"  unit="kb"/>
 	            </ResourceGroup>
 	            
 	            <ResourceGroup instanced="false" key="mem" nameKey="42" validation="">
 	            	<ResourceAttribute key="max_usage" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false" maxVal="" minVal=""  unit="kb"/>
-	            	<ResourceAttribute key="usage" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" unit="kb"/>
-	            	<ResourceAttribute key="active_anon" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="active_files" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="cache" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="inactive_anon" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="inactive_file" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="mapped_file" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="pgfault" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="pgmajfault" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="pgpgin" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="pgpgouts" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="rss" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="rss_huge" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="total_active_anon" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="total_cache" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="total_inactive_anon" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="total_inactive_file" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="total_mapped_file" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="total_pgfault" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="total_pgmajfault" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="total_pgpgin" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="total_pgpgout" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="total_rss" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
-	            	<ResourceAttribute key="total_rss_huge" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="usage" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" unit="kb"/>
+	            	<ResourceAttribute key="active_anon" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="active_files" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="cache" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="inactive_anon" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="inactive_file" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="mapped_file" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="pgfault" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="pgmajfault" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="pgpgin"  nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="pgpgouts" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="rss" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_active_anon" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_cache" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_inactive_anon" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_inactive_file" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_mapped_file" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_pgfault" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_pgmajfault" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_pgpgin" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_pgpgout" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_rss" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
+	            	<ResourceAttribute key="total_rss_huge" nameKey="44" dashboardOrder="4" dataType="float"  defaultMonitored="true" isDiscrete="false" isRate="false" />
 	            </ResourceGroup>
 	            
 	            <ResourceGroup instanced="false" key="net" nameKey="56" validation="">
 	            	<ResourceAttribute key="packetsRxPerSec" nameKey="1509" dashboardOrder="6" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false" maxVal="" minVal="" />
-	            	<ResourceAttribute key="rx_bytes" dashboardOrder="7" dataType="float" defaultMonitored="true" isDiscrete="false" isRate="false"/>
-	            	<ResourceAttribute key="tx_packets" dashboardOrder="8" dataType="float" defaultMonitored="true" isDiscrete="false" isRate="false"/>
+	            	<ResourceAttribute key="rx_bytes" nameKey="1509" dashboardOrder="7" dataType="float" defaultMonitored="true" isDiscrete="false" isRate="false"/>
+	            	<ResourceAttribute key="tx_packets" nameKey="1509" dashboardOrder="8" dataType="float" defaultMonitored="true" isDiscrete="false" isRate="false"/>
 	            </ResourceGroup>
 	            
 	 </ResourceKind>

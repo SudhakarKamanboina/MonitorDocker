@@ -1,7 +1,12 @@
 package demo;
 
 import java.io.IOException;
+import java.util.Arrays;
 
+import org.json.JSONObject;
+
+import com.docker.model.StatContent;
+import com.docker.model.StatContents;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -35,5 +40,9 @@ public class Test {
 		}
 		
 	}*/
+		
+		long i = 18;
+		double r = i;
+		System.out.println(r);
 	}
 }

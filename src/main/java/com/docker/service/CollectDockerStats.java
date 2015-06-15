@@ -26,7 +26,7 @@ public class CollectDockerStats implements Runnable {
 	@Override
 	public void run() {
 		
-		ExecutorService executor = Executors.newFixedThreadPool(5);
+		ExecutorService executor = Executors.newFixedThreadPool(1);
 		try
 		{
 			logger.debug("Thread for url: "+strUrl);
@@ -39,7 +39,7 @@ public class CollectDockerStats implements Runnable {
 	        List<String> stats = new ArrayList<String>();
 	        while ((inputLine = in.readLine()) != null) 
 	        {
-	            System.out.println(strUrl +" --- "+inputLine);
+	            //System.out.println(strUrl +" --- "+inputLine);
 	        	stats.add(inputLine);
 	        	if(delegate && stats.size() ==3)
 	            {
