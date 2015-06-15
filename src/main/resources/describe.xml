@@ -1,4 +1,4 @@
-<AdapterKind  key="DOCKER" nameKey="1" version="5"
+<AdapterKind  key="DOCKER" nameKey="1" version="6"
 
 xmlns="http://schemas.vmware.com/vcops/schema"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -47,6 +47,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	            	<ResourceAttribute key="packetsRxPerSec" nameKey="1509" dashboardOrder="6" dataType="float"  defaultMonitored="true"   isDiscrete="false" isRate="false" maxVal="" minVal="" />
 	            	<ResourceAttribute key="rx_bytes" nameKey="1509" dashboardOrder="7" dataType="float" defaultMonitored="true" isDiscrete="false" isRate="false"/>
 	            	<ResourceAttribute key="tx_packets" nameKey="1509" dashboardOrder="8" dataType="float" defaultMonitored="true" isDiscrete="false" isRate="false"/>
+	            </ResourceGroup>
+	            
+	            <ResourceGroup instanced="false" key="config" nameKey="56" validation="">
+	            	<ResourceAttribute key="imageId" nameKey="1509" dashboardOrder="7" dataType="float" defaultMonitored="true" isDiscrete="false" isRate="false" isProperty="true"/>
+	            	<ResourceAttribute key="repoTag" nameKey="1509" dashboardOrder="7" dataType="float" defaultMonitored="true" isDiscrete="false" isRate="false" isProperty="true"/>
 	            </ResourceGroup>
 	            
 	 </ResourceKind>

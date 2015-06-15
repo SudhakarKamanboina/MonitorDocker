@@ -1,22 +1,15 @@
 package com.docker.service;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.TimeZone;
 import java.util.concurrent.Callable;
 
 import jodd.http.HttpRequest;
 import jodd.http.HttpResponse;
 
-import org.apache.commons.lang3.ArrayUtils;
-import org.hamcrest.core.IsInstanceOf;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -384,10 +377,11 @@ public class ProcessStats implements Callable<Boolean> {
 		double result=0;
 		if(obj.getClass().isAssignableFrom(Long.class))
 		{
-			System.out.println(obj);
+			//System.out.println(obj);
 			long val = (long) obj;
 			result = val;
-			System.out.println("in long :"+result);
+			//System.out.println("in long :"+result);
+			//result = Double.valueOf(truncate(String.valueOf(val)));
 		}
 		else if(obj.getClass().isAssignableFrom(Integer.class))
 		{
@@ -398,6 +392,11 @@ public class ProcessStats implements Callable<Boolean> {
 		
 		return result;
 		
+	}
+	
+	String truncate(String str)
+	{
+		return str.substring(0, str.indexOf(".")+3);
 	}
 	
 

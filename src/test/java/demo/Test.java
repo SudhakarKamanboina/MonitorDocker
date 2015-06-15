@@ -41,8 +41,8 @@ public class Test {
 		
 	}*/
 		
-		long i = 18;
-		double r = i;
-		System.out.println(r);
+		String url = "http://192.168.59.103:2375/v1.18/containers/nodejs/stats";
+		String newUrl = url.substring(0, url.lastIndexOf("8")+1);
+		System.out.println(newUrl);
 	}
 }
